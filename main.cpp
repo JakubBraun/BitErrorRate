@@ -11,9 +11,26 @@ int main(int argc, char *argv[])
     string first_file = argv[1];
     string second_file = argv[2];
 
-    ifstream first_stream(first_file);
-    ifstream second_stream(second_file);
+    ifstream first_stream(first_file, ios::binary);
+    ifstream second_stream(second_file, ios::binary);
 
+    int bit_counter = 0, different_counter = 0;
+
+    char first_char, second_char;
+    first_stream >> first_char;
+    second_stream >> second_char;
+
+    while(first_char != EOF && second_char != EOF) {
+
+    }
+
+    if(first_char != EOF || second_char != EOF) {
+        cout << "nie mozna porownac plikow roznej dlugosci";
+    }
+    else {
+        double a = different_counter, b = bit_counter;
+        cout << a / b << "\n";
+    }
 
     first_stream.close();
     second_stream.close();
