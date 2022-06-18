@@ -21,7 +21,12 @@ int main(int argc, char *argv[])
     second_stream >> second_char;
 
     while(first_char != EOF && second_char != EOF) {
-
+        bit_counter++;
+        if (first_char != second_char) {
+            different_counter++;
+        }
+        first_stream >> first_char;
+        second_stream >> second_char;
     }
 
     if(first_char != EOF || second_char != EOF) {
@@ -29,6 +34,7 @@ int main(int argc, char *argv[])
     }
     else {
         double a = different_counter, b = bit_counter;
+        // aby miec precyzje
         cout << a / b << "\n";
     }
 
